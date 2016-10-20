@@ -1,0 +1,9 @@
+body{
+    background: url(https://i.ytimg.com/vi/_GvgBSAKq4Q/maxresdefault.jpg);
+	background-color: #444;
+    background: url(https://i.ytimg.com/vi/_GvgBSAKq4Q/maxresdefault.jpg),url(https://i.ytimg.com/vi/_GvgBSAKq4Q/maxresdefault.jpg),url(https://i.ytimg.com/vi/_GvgBSAKq4Q/maxresdefault.jpg);    
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}
