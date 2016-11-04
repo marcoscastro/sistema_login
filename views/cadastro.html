@@ -1,25 +1,27 @@
-% rebase('base.html', title='Fazer login')
+% rebase('base.html', title='Fazer cadastro')
 
 <div class="container">
     <div class="row vertical-offset-100">
     	<div class="col-md-4 col-md-offset-4">
     		<div class="panel panel-default">
 			  	<div class="panel-heading">
-			    	<h3 class="panel-title">Login</h3>
+			    	<h3 class="panel-title">Cadastro</h3>
 			 	</div>
 			  	<div class="panel-body">
-			    	<form accept-charset="UTF-8" role="form" action="/" method="post">
+			    	<form accept-charset="UTF-8" role="form" action="cadastro" method="post">
                     <fieldset>
 			    	  	<div class="form-group">
+			    	  		<p>Escolha um username:</p>
 			    		    <input class="form-control" placeholder="username" name="username" type="text">
 			    		</div>
 			    		<div class="form-group">
+			    			<p>Escolha uma senha:</p>
 			    			<input class="form-control" placeholder="password" name="password" type="password" value="">
 			    		</div>
-			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Cadastrar">
 			    	</fieldset>
 			      	</form>
-			      	<p><a href="cadastro">Clique aqui</a> para fazer o cadastro.</p>
+			      	<p><a href="/">Clique aqui</a> para fazer o login.</p>
 			    </div>
 			</div>
 		</div>
