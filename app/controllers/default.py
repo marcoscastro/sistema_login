@@ -1,6 +1,6 @@
 from app import app
 from app.models.tables import User
-from bottle import template, static_file, request
+from bottle import template, static_file, request, redirect
 
 # static routes
 @app.get('/<filename:re:.*\.css>')
@@ -21,7 +21,7 @@ def fonts(filename):
 
 @app.route('/')
 def login():
-	return template('login')
+	return template('login', sucesso=True)
 
 @app.route('/cadastro')
 def cadastro():
@@ -33,13 +33,22 @@ def acao_cadastro(db):
 	password = request.forms.get('password')
 	new_user = User(username, password)
 	db.add(new_user)
-	return template('verificacao_cadastro', nome=username)
+	return redirect('/usuarios')
 
 @app.route('/', method='POST')
-def acao_login():
+def acao_login(db):
 	username = request.forms.get('username')
 	password = request.forms.get('password')
-	return template('verificacao_login', sucesso=True)
+	result = db.query(User).filter((User.username == username) \
+			& (User.password == password)).all()
+	if result:
+		return redirect('/usuarios')
+	return template('login', sucesso=False)
+
+@app.route('/usuarios')
+def usuarios(db):
+	usuarios = db.query(User).all()
+	return template('lista_usuarios', usuarios=usuarios)
 
 @app.error(404)
 def error404(error):

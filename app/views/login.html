@@ -1,6 +1,9 @@
 % rebase('base.html', title='Fazer login')
 
 <div class="container">
+    % if not sucesso:
+    <div class="alert alert-danger">Falha ao realizar o login!</div>
+    % end
     <div class="row vertical-offset-100">
     	<div class="col-md-4 col-md-offset-4">
     		<div class="panel panel-default">
