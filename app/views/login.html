@@ -16,4 +16,7 @@
         </fieldset>
     </form>
     <p><a href="cadastro">Clique aqui</a> para fazer o cadastro.</p>
+    % if not sucesso:
+    <p style="color:red"><strong>Usuário e/ou senha incorretos.</strong></p>
+    % end
 </div>
